@@ -4,7 +4,46 @@ const readlineSync = require("readline-sync");
 // V A R I A B L E S //
 var nbr = 0; 
 var i = 0;
-var x = 0;
+var x = 5;
+var y = 102;
+var arr = [1, 2, 3, 4, 5];
+let arr1 = [100, 101, 102];
+let newarr =[];
+
+//Exercise 3.4
+console.log("Maximum Value: "+Math.max(...arr));
+console.log("Minimum Value: "+Math.min(...arr));
+
+//Exercise 3.3
+for (let nb of arr) {
+    newarr.push(nb);
+}
+console.log(`${newarr} It's a copy off an arr with push`)
+
+//Exercise 3.2
+for (let nb of arr) {
+    i = i + nb;
+}
+console.log(i/arr.length);
+var i=0;
+
+for (let nb of arr1) {
+    i = i + nb;
+}
+console.log(i/arr1.length);
+var i=0;
+
+//Exercise 3.1
+let som=null;
+for (let nb of arr) {
+    som = som + nb;
+}
+console.log(som);
+
+for (let nb of arr1) {
+    nbr = nbr + nb;
+}
+console.log(nbr); 
 
 //Exercise 2.7
 let n = Number(readlineSync.question("Give me a number: "));
@@ -16,7 +55,7 @@ while(i<n){
     quest= Number(readlineSync.question("One more, please: "));
     sum = sum + quest
 }
-console.log(sum);
+console.log("I have additionate " + n + " times your numbers and the sum is: " + sum);
 
 //Exercise 2.6
 let day = Number(readlineSync.question("Donnes-moi un chiffre, et je te donne un jours: "));
