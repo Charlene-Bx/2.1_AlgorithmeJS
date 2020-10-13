@@ -1,8 +1,70 @@
 //Installe la library "ReadLine-sync"
 const readlineSync = require("readline-sync");
 
+// V A R I A B L E S //
+var nbr = 0; 
+var i = 0;
+var x = 0;
+
+//Exercise 2.7
+let n = Number(readlineSync.question("Give me a number: "));
+let quest;
+let sum = 0;
+
+while(i<n){
+    i++;
+    quest= Number(readlineSync.question("One more, please: "));
+    sum = sum + quest
+}
+console.log(sum);
+
+//Exercise 2.6
+let day = Number(readlineSync.question("Donnes-moi un chiffre, et je te donne un jours: "));
+if (day===1) {
+    console.log("Monday!");
+}
+else if (day===2) {
+    console.log("Tuesday!");
+}
+else if (day===3) {
+    console.log("Wednesday!");
+}
+else if (day===4) {
+    console.log("Thursday!");
+}
+else if (day===5) {
+    console.log("Firday!");
+}
+else if (day===6) {
+    console.log("Saturday!");
+}
+else if (day===7) {
+    console.log("Sunday!");
+}
+else if (day>7) {
+    console.log("Il n'y a que sept jours dans une semaine...");
+}
+else console.log("Un chiffre j'ai dis...")
+
+//Exercise 2.5
+let numb;
+do {
+    numb = Number(readlineSync.question("Quel est ton chiffre favori?"));
+    console.log("Non, tu te trompes, ce n'est pas LE chiffre que tu préféres...");
+} while (numb!==42);
+
+//Exercice 2.4
+
+while(nbr<=100){
+    
+    nbr++;
+    if((nbr%2)==0){
+        console.log(nbr/2);
+    }else console.log(nbr*3);
+}
+
 //Exercice 2.3
-var nbr = 0;
+
 while(nbr<=100){
     
     nbr++;
@@ -11,11 +73,11 @@ while(nbr<=100){
     }
 }
 // B O N U S Exercice 2.3
-var nbre = 0;
+
 for(i=2; i<=100; i=i+2)
 {
-  nbre = i;
-  console.log(`${nbre},`);
+  nbr = i;
+  console.log(`${nbr},`);
   
 }
 
