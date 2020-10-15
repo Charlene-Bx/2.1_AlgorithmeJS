@@ -1,16 +1,11 @@
 
 /**
  * Exercice 4.6
- * @function array - It's a function that tell you the average of your arrany and the minima and the maxima of it.
+ * @function factorial
+ * @description It's a recursive function that returns the factorial of a number
  * 
- * @param average - It's a function that calculate the average of an array.
- * @return {number} - the avaerage of the array
- * 
- * @param mini - It's a function that shearch the most smaller number of an array.
- * @return {number} - the most smaller number of the array
- * 
- * @param maxi - It's a function that shearch the most bigger number of an array.
- * @return {number} - the most bigger number of the array
+ * @param {number} - The number to calculate in fractional number
+ * @return {number} The fractional number
  */
 
 
@@ -20,12 +15,29 @@ const readlineSync = require("readline-sync");
 
 
 // V A R I A B L E S - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
+let multi=1;
+let test=1;
+let monChiffre=4;
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
 // F O N C T I O N S - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+function factorial(a) {
+for (let x=1;x<=a;x++){
+    multi=multi*x;
+}
+return multi
+}
 
+function fact(a) 
+{
+  if (a === 0)
+  {
+    return 1;
+  }
+  return fact(a-1)* a ;
+}
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
+console.log(`Your number is: ${monChiffre} And the fractional of this is: ${factorial(monChiffre)}! But with a boucle For`);
+console.log(`Your number is: ${monChiffre} And the fractional of this is: ${fact(monChiffre)}! In recursive function!`);
 
