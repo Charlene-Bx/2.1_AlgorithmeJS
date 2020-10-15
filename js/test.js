@@ -1,6 +1,7 @@
 //Installe la library "ReadLine-sync"
 const readlineSync = require("readline-sync");
 
+
 // V A R I A B L E S //
 var nbr = 0; 
 var i = 0;
@@ -10,36 +11,88 @@ var arr = [1, 2, 3, 4, 5];
 let arr1 = [100, 101, 102];
 let newarr =[];
 
-//Exercise 4.3
+
+// Exercise 4.4 --------------------------------------------------------------------------------------------------------------------------
+// Function average return the average of an array 
+// @param {array} the array to calculate the average
+// @return {number} the average of the array
+
+// Function mini return the minimal element of an array 
+// @param {array} the array to take the minimum
+// @return {number} the minimum of the array
+
+// Function maxi return the maximal element of an array 
+// @param {array} the array to take the maximal
+// @return {number} the maximal of the array
+
+
+
+function average(arr){
+    for (let elements of arr) {
+        i = i + elements;
+    }
+    return i/arr.length
+}
+
+function mini(arr){
+    return Math.min(...arr);
+}
+
+function maxi(arr){
+    return Math.max(...arr);
+}
+
+let arrtest =[1,2,3,4,5];
+console.log(`The average of your array (${arrtest}) is ${average(arrtest)}!`);
+console.log(`The minimun value of it is: ${mini(arrtest)}.`);
+console.log(`The maximun value of it is: ${maxi(arrtest)}.`);
+
+
+//Exercise 4.3 --------------------------------------------------------------------------------------------------------------------------
+// Function multirand generate an array of random number with a lengt choosed by user
+// @param {number} the length of the genrate array
+// @return {array} the array of randoms numbers
+
 if(readlineSync.keyInYN("* * * E X E R C I C E  4.3 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
 }
-//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-function rand10() {
-    return Math.floor(Math.random() * 10)+1;
+if(readlineSync.keyInYN("Do you want to see the documentation for the function multirand? ")){
+    console.log("It's a function that generate an array with how many random number you want! Isn't it cool?! Let's go!")
 }
+
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+import {rand10}
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 let randarr = [];
 let howmany = parseInt(readlineSync.question("How many wanting random number in your array? "));
+
 function multiRand(n) {
+
     for (let x=0;x<=(n-1);x++){
         randarr.push(rand10());
     }
+
     return randarr;
 }
-console.log(`You have ${howmany} randoms numbers in your array that are: ${multiRand(howmany)}`);
-//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-//Exercise 4.2
+console.log(`You have ${howmany} randoms numbers in your array that are: ${multiRand(howmany)}`);
+
+
+//Exercise 4.2 -------------------------------------------------------------------------------------------------------------------------
+// Function rand1O generate a random number between 1 and 10
+// @return {number} a random number
+
 if(readlineSync.keyInYN("* * * E X E R C I C E  4.2 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
 }
-//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 if(readlineSync.keyInYN("Do you want to see the documentation for the function rand10? ")){
     console.log("It's a function that generate a random number between 1 and 10. Let's go!")
 }
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function rand10() {
     return Math.floor(Math.random() * 10)+1;
 }
@@ -51,46 +104,55 @@ while(radio===true){
     radio=readlineSync.keyInYN("Do you want an other one again? ");
 }
 
-//Exercise 4.1
+
+//Exercise 4.1 -------------------------------------------------------------------------------------------------------------------------
+// Function calcsurface calculate the aera in m2 of a rectangle or a losange
+// @param {number} the length of the shape
+// @param {number} the width of the shape
+// @return {number} a random number
+
 if(readlineSync.keyInYN("* * * E X E R C I C E  4.1 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
 }
-//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 if(readlineSync.keyInYN("Do you want to see the documentation for the function calcSurface? ")){
     console.log("It's a function that caculate the aera of a shape with four sides. The calcul is simple; width*lenght. Let's go!")
 }
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 let userLength=readlineSync.question("What is the length,in meters, of your quadrilateral shape?");
-let userWidth=readlineSync.question("What is the width, in meters, of your quadrilateral shape? ")
+let userWidth=readlineSync.question("What is the width, in meters, of your quadrilateral shape? ");
+
 function calcSurface(a,b){
     return a*b;
 }
 console.log("Your quadrilateral shape got a surface of "+calcSurface(userLength,userWidth)+" m2.");
 
-//Exercise 3.4
+
+//Exercise 3.4 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  3.4 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
 }
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
+console.log("Your array is: "+arr+" and you want to know maximun and minimun value:")
 console.log("Maximum Value: "+Math.max(...arr));
 console.log("Minimum Value: "+Math.min(...arr));
 
-//Exercise 3.3
+
+//Exercise 3.3 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  3.3 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
 }
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
+console.log("Your initial array is: "+arr+" and you want to copy it, the same:")
 for (let nb of arr) {
     newarr.push(nb);
 }
-console.log(`${newarr} It's a copy off an arr with push`)
+console.log(`${newarr} It's a copy off an arr with push`);
 
-//Exercise 3.2
+
+//Exercise 3.2 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  3.2 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -109,7 +171,8 @@ for (let nb of arr1) {
 console.log(i/arr1.length);
 var i=0;
 
-//Exercise 3.1
+
+//Exercise 3.1 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  3.1 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -127,7 +190,8 @@ for (let nb of arr1) {
 }
 console.log(nbr); 
 
-//Exercise 2.7
+
+//Exercise 2.7 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  2.7 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -145,7 +209,8 @@ while(i<n){
 }
 console.log("I have additionate " + n + " times your numbers and the sum is: " + sum);
 
-//Exercise 2.6
+
+//Exercise 2.6 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  2.6 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -179,7 +244,8 @@ else if (day>7) {
 }
 else console.log("Un chiffre j'ai dis...")
 
-//Exercise 2.5
+
+//Exercise 2.5 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  2.5 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -192,7 +258,8 @@ do {
     console.log("Non, tu te trompes, ce n'est pas LE chiffre que tu préféres...");
 } while (numb!==42);
 
-//Exercice 2.4
+
+//Exercice 2.4 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  2.4 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -207,7 +274,8 @@ while(nbr<=100){
     }else console.log(nbr*3);
 }
 
-//Exercice 2.3
+
+//Exercice 2.3 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  2.3 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -221,7 +289,8 @@ while(nbr<=100){
         console.log(`${nbr},`);
     }
 }
-// B O N U S Exercice 2.3
+
+// B O N U S Exercice 2.3 - - - - - - - - - - - - - - - - - - - - -
 if(readlineSync.keyInYN("* * * B O N U S 2.3 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -235,7 +304,8 @@ for(i=2; i<=100; i=i+2)
   
 }
 
-//Exercice 2.2
+
+//Exercice 2.2 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  2.2 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -251,7 +321,8 @@ if ((current>min) && (current<max)){
 }
 else console.log("T'as rien compris à ce programme révolutionnaire, laisse tombé!");
 
-//Exercice 2.1
+
+//Exercice 2.1 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  2.1 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -266,7 +337,7 @@ else
     console.log("Awesome! Maybe your parents still pay the rent");
 
 
-//Exercice 1.8
+//Exercice 1.8 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  1.8 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -298,7 +369,7 @@ let animal = readlineSync.question("Et pour finir, quel est ton animal favoris?"
 
 console.log("D'aprés une études récente de l'université de "+ ville +", "+ poison[index] +" contenu dans les " + plat +" serait à l'origine de l'odeur quelques peu "+ gout +" des pets mouillés de la "+ animal +".")
 
-//Exercice 1.7
+//Exercice 1.7 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E 1.7 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -310,7 +381,8 @@ let birthYear = readlineSync.question("And your birth year, please? ");
 
 console.log("You win "+ (((shoeSize*2 +5)*50)-birthYear)+1776+"€ ... No, it's a joke sorry!");
 
-//Exercice 1.6
+
+//Exercice 1.6 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  1.6 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -321,7 +393,8 @@ let firstIntegrer = readlineSync.question("AGAIN! Give me an integer number beet
 let secondIntegrer = readlineSync.question("and a second beetween 1 and 5! ");
 console.log("It's possible to put " + Math.trunc(firstIntegrer/secondIntegrer) + " times \""+ secondIntegrer + "\" in "+firstIntegrer+ " and it will remain " + firstIntegrer%secondIntegrer)
 
-//Exercice 1.5
+
+//Exercice 1.5 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  1.5 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -333,7 +406,8 @@ let secondNumber = readlineSync.question("Thank you... But I need one more, plea
 console.log("Your first number without decimal is: "+Math.trunc(firstNumber));
 console.log("And the multiplication of both is: "+ firstNumber*secondNumber);
 
-//Exercice 1.4
+
+//Exercice 1.4 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  1.4 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -347,7 +421,9 @@ if (readlineSync.keyInYN("Thus, you tell me that you're "+userName+" "+userFirst
 else{
     console.log("Whatever! It's not important! Let's go to the second exercice");
 }
-//Exercice 1.3
+
+
+//Exercice 1.3 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  1.3 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -357,7 +433,8 @@ if(readlineSync.keyInYN("* * * E X E R C I C E  1.3 * * *")){
 let userName = readlineSync.question("Can you give me your name please?");
 console.log("Hello "+userName);
 
-//Exercice 1.2
+
+//Exercice 1.2 --------------------------------------------------------------------------------------------------------------------------
 if(readlineSync.keyInYN("* * * E X E R C I C E  1.2 * * *")){
 } else{
     readlineSync.question("Press Control Z: "); 
@@ -369,7 +446,8 @@ let firstName = "Bonnardeaux";
 let city = "Bruxelles";
 console.log("Your name is " + name + " " + firstName + " and you live in " + city +".");
 
-//Exercice 1.1
+
+//Exercice 1.1 --------------------------------------------------------------------------------------------------------------------------
 let avariable = "* * * DEBUT DES EXERCICES * * *";
 console.log(avariable);
 
